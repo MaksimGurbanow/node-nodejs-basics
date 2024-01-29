@@ -16,5 +16,7 @@ const create = async (filePath) => {
     }
 };
 
-const filePath = path.join('src', 'fs', 'files', 'fresh.txt');
+const fileName = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(fileName);
+const filePath = path.join(__dirname, 'files', 'fresh.txt');
 await create(filePath);
